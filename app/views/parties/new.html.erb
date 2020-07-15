@@ -12,7 +12,11 @@
   </div>
 <% end %>
 <%= form_for @party do |f| %>
-
+  
+    <%=f.label :category%>
+    <%=f.fields_for :category do |c|%>
+        <%=c.text_field :name %>
+    <%end%>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :date %>
